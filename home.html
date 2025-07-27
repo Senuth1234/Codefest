@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Hub</title>
+  <style>
+    h1, h2 { text-align: center; }
+  
+  .about-paragraph {
+    color: goldenrod;
+    background-image: url('Bmmv (main scrren home).jpeg'); 
+    background-position: center;
+    padding: 20px;
+    margin: 2%;
+    background-repeat: no-repeat;
+    background-size:contain cover;
+  }
+
+    .button {
+      color: #000000;;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+     
+    }
+
+    .button2 {
+      background-color:maroon;
+    }
+
+    .button3 {
+      background-color: goldenrod;
+    }
+     .button4 {
+      background-color: maroon;
+    }
+  </style>
+</head>
+<body>
+  <h1  style="color: goldenrod;background-color: maroon;margin: 2%;">Welcome to BMMV Student Hub</h1>
+  <h2  style="color: goldenrod;background-color: maroon;margin: 2%;">About us</h2>
+<p class="about-paragraph"><i>
+  Bandarawela Central College: A Beacon of Learning in the Uva Hills
+  Nestled among the misty hills of Bandarawela, Bandarawela Central College stands as a proud monument of Sri Lanka’s educational heritage.<br>
+  Founded in 1942 during the throes of World War II, the school began as a humble branch of Royal College, Colombo. Over the decades, it evolved into a fully-fledged national institution, earning a reputation not just for academic rigor but for shaping well-rounded individuals.
+</i></p>
+
+  
+  
+  <button class="button button2" onclick="improvements()">Improvements</button>
+  <button class="button button3" onclick=" Feedback()">give feedback</button>
+    <button class="button button4" onclick="student_teacher_connections()">student teacher connections</button>
+
+
+  <script>
+    function improvements() {  
+        window.location.href = "improvements.html";
+    }
+
+     
+    
+    function Feedback() {
+       window.location.href = "reply.html";
+    }
+    function student_teacher_connections() {
+  window.location.href = "student teacher connections.html";
+    }
+  </script>
+</body>
+</html>

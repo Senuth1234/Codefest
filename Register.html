@@ -1,0 +1,139 @@
+<html>
+<head>
+  <title>Bmmv student Registration</title>
+</head>
+<body>
+
+<h1>Welcome to the Bmmv Student hub</h1>
+<h2>To register, please fill out the form</h2>
+
+<label>First Name:</label>
+<input type="text" id="firstName">
+
+<label>Surname:</label>
+<input type="text" id="surname">
+
+<label>Date of Birth:</label>
+<input type="date" id="schoolName">
+
+<label>User name:</label>
+<input type="text" id="username">
+
+<label>password:</label>
+<input type="text" id="password">
+
+
+<button onclick="register()">register</button>
+
+<div id="result"></div>
+
+
+
+<h2>To login, please fill out the form</h2>
+
+
+
+<label>First Name:</label>
+<input type="text" id="firstName">
+
+<label>Surname:</label>
+<input type="text" id="surname">
+
+<label>Date of Birth:</label>
+<input type="date" id="schoolName">
+
+<label>User name:</label>
+<input type="text" id="username">
+
+<label>password:</label>
+<input type="text" id="password">
+
+
+<button onclick="login()">login</button>
+
+<div id="result"></div>
+
+<script>
+    function register() {
+    let f = document.getElementById("firstName").value.trim();
+    let s = document.getElementById("surname").value.trim();
+    let sc = document.getElementById("schoolName").value.trim();
+    let key = (f + s + sc).toLowerCase();
+
+    if (!f || !s || !sc) {
+      document.getElementById("result").innerText =  "Fill all fields!";
+      return;
+    }
+
+    if (!records[key]) {
+      records[key] = "STU-" + f[0].toUpperCase() + s[0].toUpperCase() + "-" + Math.floor(Math.random() * 100000);
+      document.getElementById("result").innerText = "Registered: " + records[key];
+    } else {
+      document.getElementById("result").innerText = " Already registered: " + records[key];
+    }
+
+}
+
+  const records = {};
+
+  function login() {
+    let f = document.getElementById("firstName").value.trim();
+    let s = document.getElementById("surname").value.trim();
+    let sc = document.getElementById("schoolName").value.trim();
+    let key = (f + s + sc).toLowerCase();
+
+    document.getElementById("result").innerText = records[key]
+      ? " logged in : " + records[key]
+      : "not found";
+  }
+
+
+
+
+  function register() {
+    let f = document.getElementById("firstName").value.trim();
+    let s = document.getElementById("surname").value.trim();
+    let sc = document.getElementById("schoolName").value.trim();
+    let u = document.getElementById("username").value.trim();
+    let p = document.getElementById("password").value.trim();
+    let key = (f + s + sc).toLowerCase();
+
+    if (f && s && sc && u && p) {
+      records[key] = u;
+      document.getElementById("result").innerText = "Registered successfully!";
+
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 1000);
+    } else {
+      document.getElementById("result").innerText = "Please fill out all fields.";
+    }
+  }
+
+  function login() {
+    let f = document.getElementById("firstName").value.trim();
+    let s = document.getElementById("surname").value.trim();
+    let sc = document.getElementById("schoolName").value.trim();
+    let key = (f + s + sc).toLowerCase();
+
+    if (records[key]) {
+      document.getElementById("result").innerText = "Logged in: " + records[key];
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 1000);
+    } else {
+      document.getElementById("result").innerText = "User not found.";
+    }
+  }
+
+  
+
+  
+ 
+</script>
+
+
+
+</body>
+</html>
+
